@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import { ClarityModule } from 'clarity-angular';
 import { AppComponent } from './app.component';
 import { ROUTING } from "./app.routing";
 import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
+import { SharedModule } from './shared/shared.module';
+import { DataEntryModule } from './data-entry/data-entry.module';
 
 @NgModule({
     declarations: [
@@ -16,10 +16,10 @@ import { AboutComponent } from "./about/about.component";
     ],
     imports: [
         BrowserModule,
-        FormsModule,
-        HttpModule,
         ClarityModule.forRoot(),
-        ROUTING
+        SharedModule.forRoot(),
+        ROUTING,
+        DataEntryModule
     ],
     providers: [],
     bootstrap: [AppComponent]
